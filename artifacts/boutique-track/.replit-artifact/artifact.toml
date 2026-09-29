@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "BoutiqueTrack"
+description = "A single-boutique inventory and point-of-sale system. The user-facing application and XAMPP deployment use PHP and MySQL; this app route provides its live preview."
+version = "1.0.0"
+id = "artifacts/boutique-track"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19561
+
+[services.development]
+run = "pnpm --filter @workspace/boutique-track run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/boutique-track", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/boutique-track/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19561"
+BASE_PATH = "/"
