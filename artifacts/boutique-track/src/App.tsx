@@ -48,7 +48,7 @@ function Home() {
     <main className="host" data-testid="host-boutique-track">
       <header className="masthead">
         <div className="brand-lockup">
-          <div className="brand-mark" aria-hidden="true">b</div>
+          <div className="brand-mark" aria-hidden="true">B</div>
           <div>
             <div className="brand-name">BoutiqueTrack</div>
             <div className="brand-caption">The store, in sync</div>
